@@ -1,0 +1,25 @@
+[vagrant]
+debian9 vagrant_box=debian/stretch64
+ubuntu1604 vagrant_box=ubuntu/xenial64
+centos7 vagrant_box=centos/7
+fedora28 vagrant_box=fedora/28-cloud-base
+
+[debian]
+debian9
+
+[ubuntu]
+ubuntu1604
+
+[deb:children]
+debian
+ubuntu
+
+[centos]
+centos7
+
+[fedora]
+fedora28
+
+[rpm:children]
+centos
+fedora

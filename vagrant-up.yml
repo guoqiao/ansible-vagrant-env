@@ -1,0 +1,22 @@
+#!/usr/bin/env ansible-playbook
+
+- name: vagrant up
+  hosts: localhost
+  tasks:
+
+    - name: render template
+      tags: render
+      template:
+        src: templates/Vagrantfile
+        dest: "Vagrantfile"
+        force: yes
+
+    - name: vagrant up
+      tags: vagrant-up
+      command: vagrant up --parallel --install-provider
+      ignore_errors: yes
+
+    - meta: refresh_inventory
+
+    - name: rm log
+      shell: "rm -f *.log"
