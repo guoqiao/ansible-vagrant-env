@@ -46,8 +46,8 @@ def ansible_vars(ssh_config):
         'ansible_host': ssh_config['HostName'],  # 127.0.0.1
         'ansible_port': ssh_config['Port'],  # 2222
         'ansible_user': ssh_config['User'],  # vagrant
-        # ~/.vagrant.d/insecure_private_key
-        'ansible_private_key_file': ssh_config['IdentityFile'],
+        'ansible_connection': 'ssh',
+        'ansible_ssh_private_key_file': ssh_config['IdentityFile'],
     }
 
 
