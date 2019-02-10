@@ -1,0 +1,9 @@
+#!/usr/bin/env ansible-playbook
+
+- name: vagrant destroy
+  hosts: localhost
+  tasks:
+
+    - name: vagrant destroy
+      command: vagrant destroy --force --parallel
+      ignore_errors: yes
