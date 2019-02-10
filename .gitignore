@@ -1,3 +1,6 @@
 .python-version
 .vagrant
 /Vagrantfile
+test_*
+debug_*
+*.log
