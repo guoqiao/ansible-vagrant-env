@@ -1,0 +1,16 @@
+# -*- mode: ruby -*-
+Vagrant.configure("2") do |config|
+    config.ssh.insert_key = false
+    config.vm.provider "virtualbox" do |v|
+        v.memory = 2048
+        v.cpus = 2
+    end
+
+{% for hostname in hostvars %}
+    config.vm.define "{{hostname}}" do |dc|
+        dc.vm.box = "{{hostvars[hostname].vagrant_box}}"
+        dc.vm.hostname = "{{hostname}}"
+    end
+{% endfor %}
+
+end
