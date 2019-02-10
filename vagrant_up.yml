@@ -12,7 +12,7 @@
         force: yes
 
     - name: vagrant up
-      tags: vagrant-up
+      tags: vagrant_up
       command: vagrant up --parallel --install-provider
       ignore_errors: yes
 
