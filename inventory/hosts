@@ -7,9 +7,19 @@ centos6 vagrant_box=centos/6
 centos7 vagrant_box=centos/7
 fedora28 vagrant_box=fedora/28-cloud-base
 
+[vagrant:vars]
+ansible_user=vagrant
+ansible_connection=ssh
+ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
+ansible_python_interpreter=/usr/bin/python3
+
+
 [debian]
 debian8
 debian9
+
+[debian:vars]
+ansible_python_interpreter=/usr/bin/python
 
 [ubuntu]
 ubuntu1604
@@ -22,6 +32,9 @@ ubuntu
 [centos]
 centos6
 centos7
+
+[centos:vars]
+ansible_python_interpreter=/usr/bin/python
 
 [fedora]
 fedora28
