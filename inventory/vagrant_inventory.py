@@ -30,7 +30,7 @@ def running_machines():
 
 
 def ssh_config(host):
-    cmd = 'vagrant ssh-config ubuntu1604'
+    cmd = 'vagrant ssh-config {}'.format(host)
     output = run(cmd)
     config = {}
     for line in output.splitlines():
