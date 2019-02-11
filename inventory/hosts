@@ -1,20 +1,26 @@
 [vagrant]
+debian8 vagrant_box=debian/jessie64
 debian9 vagrant_box=debian/stretch64
 ubuntu1604 vagrant_box=ubuntu/xenial64
+ubuntu1804 vagrant_box=ubuntu/bionic64
+centos6 vagrant_box=centos/6
 centos7 vagrant_box=centos/7
 fedora28 vagrant_box=fedora/28-cloud-base
 
 [debian]
+debian8
 debian9
 
 [ubuntu]
 ubuntu1604
+ubuntu1804
 
 [deb:children]
 debian
 ubuntu
 
 [centos]
+centos6
 centos7
 
 [fedora]
