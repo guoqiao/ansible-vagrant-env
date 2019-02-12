@@ -3,6 +3,7 @@ debian8 vagrant_box=debian/jessie64 ansible_python_interpreter=python
 debian9 vagrant_box=debian/stretch64 ansible_python_interpreter=python3
 
 [ubuntu]
+ubuntu1404 vagrant_box=ubuntu/trusty64 ansible_python_interpreter=python
 ubuntu1604 vagrant_box=ubuntu/xenial64 ansible_python_interpreter=python3
 ubuntu1804 vagrant_box=ubuntu/bionic64 ansible_python_interpreter=python3
 
