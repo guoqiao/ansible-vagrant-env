@@ -1,11 +1,29 @@
-[vagrant]
-debian8 vagrant_box=debian/jessie64
-debian9 vagrant_box=debian/stretch64
-ubuntu1604 vagrant_box=ubuntu/xenial64
-ubuntu1804 vagrant_box=ubuntu/bionic64
-centos6 vagrant_box=centos/6
-centos7 vagrant_box=centos/7
-fedora28 vagrant_box=fedora/28-cloud-base
+[debian]
+debian8 vagrant_box=debian/jessie64 ansible_python_interpreter=python
+debian9 vagrant_box=debian/stretch64 ansible_python_interpreter=python3
+
+[ubuntu]
+ubuntu1604 vagrant_box=ubuntu/xenial64 ansible_python_interpreter=python3
+ubuntu1804 vagrant_box=ubuntu/bionic64 ansible_python_interpreter=python3
+
+[deb:children]
+debian
+ubuntu
+
+[centos]
+centos6 vagrant_box=centos/6 ansible_python_interpreter=python
+centos7 vagrant_box=centos/7 ansible_python_interpreter=python
+
+[fedora]
+fedora28 vagrant_box=fedora/28-cloud-base  ansible_python_interpreter=python3
+
+[rpm:children]
+centos
+fedora
+
+[vagrant:children]
+deb
+rpm
 
 [vagrant:vars]
 ansible_user=vagrant
@@ -13,32 +31,7 @@ ansible_connection=ssh
 ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
 ansible_python_interpreter=/usr/bin/python3
 
-
-[debian]
-debian8
-debian9
-
-[debian:vars]
-ansible_python_interpreter=/usr/bin/python
-
-[ubuntu]
-ubuntu1604
-ubuntu1804
-
-[deb:children]
-debian
-ubuntu
-
-[centos]
-centos6
-centos7
-
-[centos:vars]
-ansible_python_interpreter=/usr/bin/python
-
-[fedora]
-fedora28
-
-[rpm:children]
-centos
-fedora
+# define a generic group machine
+# we can include localhost docker containers and cloud vms in it
+[machine:children]
+vagrant
