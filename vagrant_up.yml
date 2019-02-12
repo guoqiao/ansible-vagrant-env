@@ -11,6 +11,11 @@
         dest: "Vagrantfile"
         force: yes
 
+    - name: vagrant box update
+      tags: vagrant_box_update
+      command: vagrant box update
+      ignore_errors: yes
+
     - name: vagrant up
       tags: vagrant_up
       command: vagrant up --parallel --install-provider
