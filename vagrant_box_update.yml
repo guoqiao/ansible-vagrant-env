@@ -1,9 +1,0 @@
-#!/usr/bin/env ansible-playbook
-
-- name: vagrant box update
-  hosts: localhost
-  tasks:
-
-    - name: vagrant box update
-      tags: vagrant_box_update
-      command: vagrant box update
