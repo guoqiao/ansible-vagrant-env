@@ -1,0 +1,10 @@
+#!/usr/bin/env ansible-playbook
+
+- name: run tasks
+  hosts: vagrant
+  tasks:
+
+    - wait_for_connection:
+    - ping:
+    - setup:
+
