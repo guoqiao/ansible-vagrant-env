@@ -17,6 +17,7 @@ centos7 vagrant_box=centos/7 ansible_python_interpreter=python
 
 [fedora]
 fedora28 vagrant_box=fedora/28-cloud-base  ansible_python_interpreter=python3
+fedora29 vagrant_box=fedora/29-cloud-base  ansible_python_interpreter=python3
 
 [rpm:children]
 centos
